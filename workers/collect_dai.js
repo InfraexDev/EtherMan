@@ -116,7 +116,7 @@ function tryCollectDai() {
     var dai_accounts = web3.eth.accounts.slice(1);
     dai_accounts.forEach( function(guy){
 
-        bal1 = parseInt(contractinstance.balanceOf(guy));
+        bal1 = contractinstance.balanceOf(guy);
         if (bal1 >= 3 * Math.pow(10, decimal)) {
             console.log(guy, bal1);
             var amount = '0x' + bal1.toString(16);
